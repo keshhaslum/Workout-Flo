@@ -4,11 +4,13 @@ import { Routes, Route, Link} from "react-router-dom";
 import Workoutspage from "./components/Workoutspage";
 import Workout from "./components/Workout";
 import Homepage from "./components/homepage";
+import images from "./components/images.png";
 
 //add routes here for components 
 function App() {
 
   return (
+
       <div>
       
       <nav className="d-flex justify-content-end ">

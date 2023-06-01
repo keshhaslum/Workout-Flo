@@ -58,17 +58,20 @@ export default function workoutList() {
     
     return (
     <div> 
-      <div className="p-2">
+      <div className="row">
      <h3>Workout List</h3>
-      </div>
+     <div className="col-4">
       {workouts.map((workout) => (
-      <div key={workout.id}>
+      <ul key={workout.id} className="list-group">
+        <li className="list-group-item">
         <Link to={`/workout/${workout.id}`}>
         {workout.workout}
         </Link>
-        
-        </div>
+        </li>
+        </ul>
             ))}
+            </div>
+            </div>
       
       <div>
         <form on Submit={e => handleSubmit(e)}>
