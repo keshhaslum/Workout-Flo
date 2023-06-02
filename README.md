@@ -40,6 +40,5 @@ list of different workouts. At the bottom you have the option to add a new worko
 ### Future steps
 
 - Be able to filter through upper body & lower body workouts
-- Be able to have an 'add' function that would allow the user to add the specific workouts they want to do that day
-which would then show up in the third component instead. The user would be able to tick them off, once the exercise is completed.
+- The user would be able to add a variety of exercises to their workout to create their workout plan for the day which would show up in a different component. The user would be able to tick them off, once the exercise is completed.
 - The user would be able to have a record of all of the past exercises they have done so that they can continue building on their weights etc
