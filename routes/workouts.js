@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     await db(
-      `INSERT INTO workouts (type, workout, reps, sets) VALUES ("${req.body.workout}", "${req.body.type}", "${req.body.reps}", "${req.body.sets}");`
+      `INSERT INTO workouts (type, workout, reps, sets) VALUES ("${req.body.type}", "${req.body.workout}", "${req.body.reps}", "${req.body.sets}");`
     );
     const result = await db("SELECT * FROM workouts ORDER by id ASC");
     res.send(result.data);

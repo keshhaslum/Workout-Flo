@@ -12,7 +12,7 @@ export default function singleWorkout() {
    }, [id]);
    
    const getWorkout = async () => {
-    const response = await fetch(`/api/workouts/${workout.id} ${workout.type}`);
+    const response = await fetch(`/api/workouts/${workout.id} ${workout.type} ${workout.workout} ${workout.reps} ${workout.sets}`);
     const data = await response.json();
     setWorkout(data);
   };
@@ -22,7 +22,7 @@ export default function singleWorkout() {
     <div>
       {workout && (
         <div>
-      {workout.type} {workout.sets} {workout.reps} 
+      {workout.type} {workout.workout} {workout.reps} {workout.reps} 
          </div>
       )}
         <h4>Workout Details</h4>

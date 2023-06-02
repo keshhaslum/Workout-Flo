@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 export default function workoutList() {
-    const initialWorkoutState= {workout: ""};
+    const initialWorkoutState= {type: "", workout: "", sets: "", reps:""};
     const [workouts, setWorkouts] = useState([]);
     const [newWorkout, setNewWorkout] = useState(initialWorkoutState); 
   
@@ -57,10 +57,11 @@ export default function workoutList() {
 
     
     return (
-    <div> 
+    <div>
+      <div className="container text-center">
       <div className="row">
      <h3>Workout List</h3>
-     <div className="col-4">
+     <div className="col">
       {workouts.map((workout) => (
       <ul key={workout.id} className="list-group">
         <li className="list-group-item">
@@ -72,15 +73,26 @@ export default function workoutList() {
             ))}
             </div>
             </div>
+            
       
       <div>
-        <form on Submit={e => handleSubmit(e)}>
+        <form onSubmit={e => handleSubmit(e)}>
+
+        
+        <label>Type of workout:</label>
+        <select name="type" id="type">
+    <option value="upperbody">Upper Body</option>
+    <option value="lowerbody">Lower Body</option>
+    </select>
+
+
         <label>Workout: </label>
         <input
           name= "workout"
           value={newWorkout.workout}
           onChange={e => handleChange(e)}
         />
+      
        
        <label>Sets: </label>
         <input
@@ -106,7 +118,7 @@ export default function workoutList() {
 
         </form>
       </div>
-
+      </div>
        </div>
   )
 }
