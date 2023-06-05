@@ -32,7 +32,7 @@ DB_PASS=(your password)
 
 The app/ webapp should be able to do the following:
 
-- The homepage has the "let's start" button which takes you to the workouts page component where you have a 
+- The homepage has the "Go to exercises" button which takes you to the workouts page component where you have a 
 list of different workouts. At the bottom you have the option to add a new workout to the workout page.
 - Once you click on a specific workout this can take you to the wokout component which gives you information on that specific workout
 - The nav bar at the top also gives you the option to take you to the different components

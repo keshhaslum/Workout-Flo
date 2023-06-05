@@ -24,9 +24,10 @@ export default function workoutList() {
       })
       };
 
+    
 
     const handleChange = (event) => {
-     const {name, value} = event.target; //?? not sure what to put here instead of name & value
+     const {name, value} = event.target; 
      setNewWorkout((prevState) => ({...prevState, [name]: value})) 
     };
     
@@ -53,19 +54,19 @@ export default function workoutList() {
         console.error(error);
       }
     };
-
+   
+  
 
     
     return (
     <div>
       <div className="container text-center">
       <div className="row">
-     <h3>Workout List</h3>
      <div className="col">
       {workouts.map((workout) => (
       <ul key={workout.id} className="list-group">
         <li className="list-group-item">
-        <Link to={`/workout/${workout.id}`}>
+        <Link to={`/workouts/${workout.id}`}>
         {workout.workout}
         </Link>
         </li>
@@ -75,47 +76,52 @@ export default function workoutList() {
             </div>
             
       
-      <div>
-        <form onSubmit={e => handleSubmit(e)}>
+      <div className="container mt-2">
+        <form className="mt-5" onSubmit={e => handleSubmit(e)}>
 
-        
+        <div className="row mt-5">
+          <div className="col">
         <label>Type of workout:</label>
         <select name="type" id="type">
     <option value="upperbody">Upper Body</option>
     <option value="lowerbody">Lower Body</option>
     </select>
+    </div>
 
-
+       <div className="col">
         <label>Workout: </label>
         <input
           name= "workout"
           value={newWorkout.workout}
           onChange={e => handleChange(e)}
-        />
+        />  </div>
       
-       
+      <div className="col">
        <label>Sets: </label>
         <input
           name= "sets"
           value={newWorkout.sets}
           onChange={e => handleChange(e)}
-        />
+        /></div>
 
+      <div className="col"> 
       <label>Reps: </label>
         <input
           name= "reps"
           value={newWorkout.reps}
           onChange={e => handleChange(e)}
-        />
+        /> </div>
 
+
+       <div className="col"> 
        <button
           type="submit"
-          className="btn btn-outline-danger mt-5"
+          className="btn btn-outline-info mt-3"
         >
           Add workout!
-        </button>
+        </button> </div>
 
-
+        </div>
         </form>
       </div>
       </div>

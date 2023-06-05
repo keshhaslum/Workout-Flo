@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route, Link} from "react-router-dom";
 import Workoutspage from "./components/Workoutspage";
-import Workout from "./components/Workout";
+import Workouts from "./components/Workouts";
 import Homepage from "./components/homepage";
-import images from "./components/images.png";
+import Login from "./components/Login";
 
 //add routes here for components 
 function App() {
@@ -19,17 +19,25 @@ function App() {
             </div>
             <div className="mx-3">        
             <Link to='/workout' >Workout Details</Link>
+            </div>
+            <div className="mx-3"> 
+            <Link to='/login' >Log in</Link>
             </div>       
       </nav>
       <h1>My Fitness Journal</h1>
-      <Link to='/workoutspage' >Let's Start</Link>
+
+
+      
+      <h3>
+      <Link to='/workoutspage' >Go to exercises</Link></h3>
 
       
       <Routes>
         <Route path="/homepage" element={<Homepage/>}/>
         <Route path="/workoutspage" element={<Workoutspage/>}/>
-        <Route path="/workout" element={<Workout/>}/>
-        <Route path= "/workouts/:id" element={<Workout />}></Route>
+        <Route path="/workouts" element={<Workouts/>}/>
+        <Route path= "/workouts/:id" element={<Workouts />}></Route>
+        <Route path= "/login" element={<Login/>}/>
 
       </Routes>
       </div>
