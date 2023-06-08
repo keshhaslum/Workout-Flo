@@ -27,9 +27,10 @@ function App() {
       <h1>My Fitness Journal</h1>
 
 
-      
+      <div className="mt-3">
       <h3>
-      <Link to='/workoutspage' >Go to exercises</Link></h3>
+      <Link to='/workoutspage' >Go to exercises</Link></h3> </div>
+    
 
       
       <Routes>

@@ -59,7 +59,7 @@ export default function workoutList() {
 
     
     return (
-    <div>
+    <div className="mt-3">
       <div className="container text-center">
       <div className="row">
      <div className="col">
@@ -82,10 +82,12 @@ export default function workoutList() {
         <div className="row mt-5">
           <div className="col">
         <label>Type of workout:</label>
-        <select name="type" id="type">
-    <option value="upperbody">Upper Body</option>
-    <option value="lowerbody">Lower Body</option>
-    </select>
+        <select value={newWorkout.type} name="type" id="type"
+                  onChange={(e) => handleChange(e)}>
+                  <option>Select type...</option>
+                  <option value="upperbody">Upper Body</option>
+                  <option value="lowerbody">Lower Body</option>
+                </select>
     </div>
 
        <div className="col">

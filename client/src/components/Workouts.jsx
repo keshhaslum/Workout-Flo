@@ -15,18 +15,28 @@ export default function singleWorkout() {
     const response = await fetch(`/api/workouts/${id}`);
     const data = await response.json();
     setWorkout(data);
-    console.log(data);
   };
    
 
     return (
-    <div>
+    <div className="container mt-3">
+      <h4>Workout Details</h4>
       {workout && (
-        <div>
-      {workout.type} {workout.workout} {workout.reps} {workout.sets} 
+        <div className="row mt-10">
+       <div className="col"> Type: {workout[0].type} </div>
+        
+       <div className="col">
+         Exercise: {workout[0].workout}</div>
+        
+         <div className="col">
+         Reps: {workout[0].reps}</div>
+         
+         <div className="col">
+         Sets: {workout[0].sets}
+         </div>
          </div>
       )}
-        <h4>Workout Details</h4>
+        
     </div>
   );
       }
