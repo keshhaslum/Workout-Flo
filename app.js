@@ -4,7 +4,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors'); 
 
-var workoutsRouter = require('./routes/workouts');
+var menstrualRouter = require('./routes/menstrual');
+var follicularRouter = require('./routes/follicular');
+var ovulationRouter = require('./routes/ovulation');
+var lutealRouter = require('./routes/luteal');
 
 var app = express();
 
@@ -15,6 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/workouts', workoutsRouter);
+app.use('/api/menstrual', menstrualRouter);
+app.use('/api/follicular', follicularRouter);
+app.use('/api/ovulation', ovulationRouter);
+app.use('/api/luteal', lutealRouter);
 
 module.exports = app;

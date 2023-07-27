@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Login() {
     return (
-        <div>
+        <div className="component-container">
             <h3>Log in</h3>
         <div className="row mt-3">
         <div className="col">

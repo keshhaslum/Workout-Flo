@@ -31,7 +31,7 @@ DB_PASS=(your password)
 ### Functionality
 
 The app/ webapp should be able to do the following:
-
+n
 - The homepage has the "Go to exercises" button which takes you to the workouts page component where you have a
 list of different workouts. At the bottom you have the option to add a new workout to the workout page.
 - Once you click on a specific exercise this can take you to the wokout component which gives you information on that specific exercise
@@ -42,3 +42,4 @@ list of different workouts. At the bottom you have the option to add a new worko
 - Be able to filter through upper body & lower body workouts
 - The user would be able to add a variety of exercises to their workout to create their workout plan for the day which would show up in a different component. The user would be able to tick them off, once the exercise is completed.
 - The user would be able to have a record of all of the past exercises they have done & weights they have used so that they can continue building on their weights etc
+

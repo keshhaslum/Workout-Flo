@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
+import YouTube from 'react-youtube';
+
 
 
 
 export default function workoutList() {
-    const initialWorkoutState= {type: "", workout: "", sets: "", reps:""};
+    const initialWorkoutState= {workout: "", video: ""};
     const [workouts, setWorkouts] = useState([]);
     const [newWorkout, setNewWorkout] = useState(initialWorkoutState); 
   
@@ -14,7 +16,7 @@ export default function workoutList() {
     }, []);
     
     const getWorkouts = () => {
-      fetch("/api/workouts")
+      fetch("/api/luteal")
       .then(response => response.json())
       .then(workouts => {
         setWorkouts(workouts);
@@ -41,12 +43,12 @@ export default function workoutList() {
     //add workout
     const addWorkout = async () => {
       try {
-        const response = await fetch("/api/workouts", {
+        const response = await fetch("/api/luteal", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ workout: newWorkout.workout, reps: newWorkout.reps , sets: newWorkout.sets }), 
+          body: JSON.stringify({ workout: newWorkout.workout, video: newWorkout.video }), 
         });
         const data = await response.json();
         setWorkouts(data);
@@ -55,24 +57,34 @@ export default function workoutList() {
       }
     };
    
-  
+    const deleteWorkout = async (id) => {
+        try {
+          const response = await fetch(`/api/luteal/${id}`, {
+           method: "DELETE", 
+          });
+          const data = await response.json();
+          setAllJams(data);
+           } catch (error) {
+          console.error(error);
+        }
+      };
 
     
     return (
-    <div className="mt-3">
-      <div className="container text-center">
+    <div className="component-container mt-20">
+      <h3>Luteal Phase</h3>
       <div className="row">
-     <div className="col">
       {workouts.map((workout) => (
-      <ul key={workout.id} className="list-group">
-        <li className="list-group-item">
-        <Link to={`/workouts/${workout.id}`}>
-        {workout.workout}
-        </Link>
-        </li>
-        </ul>
-            ))}
+     <div className="col-3 p-4" key={workout.id}>
+     <div className="card-img-top rounded" style={{ width: "18rem" }}/>
+        <div className="card-body">
+       <p>{workout.workout}</p>
+       <p>{workout.video}</p> 
+       <div onClick={() => deleteWorkout(workout.id)}>
+              <button className="btn btn-dark">Delete Workout</button></div>
             </div>
+            </div>
+            ))}
             </div>
             
       
@@ -80,15 +92,6 @@ export default function workoutList() {
         <form className="mt-5" onSubmit={e => handleSubmit(e)}>
 
         <div className="row mt-5">
-          <div className="col">
-        <label>Type of workout:</label>
-        <select value={newWorkout.type} name="type" id="type"
-                  onChange={(e) => handleChange(e)}>
-                  <option>Select type...</option>
-                  <option value="upperbody">Upper Body</option>
-                  <option value="lowerbody">Lower Body</option>
-                </select>
-    </div>
 
        <div className="col">
         <label>Workout: </label>
@@ -99,20 +102,12 @@ export default function workoutList() {
         />  </div>
       
       <div className="col">
-       <label>Sets: </label>
+       <label>Url: </label>
         <input
-          name= "sets"
-          value={newWorkout.sets}
+          name= "video"
+          value={newWorkout.video}
           onChange={e => handleChange(e)}
         /></div>
-
-      <div className="col"> 
-      <label>Reps: </label>
-        <input
-          name= "reps"
-          value={newWorkout.reps}
-          onChange={e => handleChange(e)}
-        /> </div>
 
 
        <div className="col"> 
@@ -126,7 +121,6 @@ export default function workoutList() {
         </div>
         </form>
       </div>
-      </div>
-       </div>
+      <Link to='/homepage' >🔙</Link></div>
   )
 }

@@ -6,7 +6,7 @@ const db= require("../model/helper");
 router.get('/', async (req, res, next) => {
   try {
     const result = await db(
-      `SELECT * FROM workouts;`
+      `SELECT * FROM menstrual;`
       );
     res.send(result.data);
   } catch (err) {
@@ -14,13 +14,13 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-//insert a new lowerbody workout
+//insert a new workout
 router.post('/', async (req, res, next) => {
   try {
     await db(
-      `INSERT INTO workouts (type, workout, reps, sets) VALUES ("${req.body.type}", "${req.body.workout}", "${req.body.reps}", "${req.body.sets}");`
+      `INSERT INTO menstrual (workout, video, embedid) VALUES ("${req.body.workout}", "${req.body.video}", "${req.body.embedid}");`
     );
-    const result = await db("SELECT * FROM workouts ORDER by id ASC");
+    const result = await db("SELECT * FROM menstrual ORDER by id ASC");
     res.send(result.data);
   } catch (err) {
     res.status(500).send(err);
@@ -31,7 +31,7 @@ router.post('/', async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const result = await db(
-      `SELECT * FROM workouts WHERE id = ${req.params.id};`
+      `SELECT * FROM menstrual WHERE id = ${req.params.id};`
     );
     res.send(result.data);
   } catch (err) {
@@ -39,5 +39,15 @@ router.get("/:id", async (req, res, next) => {
   }
 }); 
 
+//delete by id
+router.delete("/:id", async (req, res, next) => {
+  try {
+    await db(`DELETE FROM menstrual WHERE id = ${req.params.id}`);
+    const result = await db("SELECT * FROM menstrual ORDER BY id ASC");
+    res.send(result.data);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 
 module.exports = router;
