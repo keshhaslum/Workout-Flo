@@ -1,4 +1,4 @@
-# My MVP - Workout Flo
+# Workout Flo (my MVP)
 
 This web app is designed for females to be able to look at the different workouts they could do depending on which phase they are in their menstrual cycle. 
 Users can add and delete workouts as well as register and log in to the app.
