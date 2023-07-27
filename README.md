@@ -1,4 +1,4 @@
-# My MVP - My Fitness Journal
+# My MVP - Workout Flo
 
 ## Setup
 
