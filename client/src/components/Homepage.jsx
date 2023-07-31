@@ -9,7 +9,7 @@ return (
     <div className="component-container">
 
 
-    <h4>Click on the phase you are in to find the right workout for you 👇</h4>
+    <h4>Click on the phase you are in to find the right workout for you! 👇</h4>
     
     <div className="cycle-container">
     <div className="phase menstrual-phase"><Link to='/menstrual' ><div className="heading">Menstrual Phase</div>
