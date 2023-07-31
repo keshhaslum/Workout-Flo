@@ -27,20 +27,36 @@
   }
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Your general CSS styles here */
+
+/* Styles for larger screens (e.g., tablets and desktops) */
+@media only screen and (min-width: 768px) {
+  /* Add styles here that should apply to screens larger than or equal to 768px width */
+}
+
+/* Styles for smaller screens (e.g., phones, including iPhone) */
+@media only screen and (max-width: 767px) {
+  /* Add styles here that should apply to screens smaller than 768px width (including iPhone) */
+
+  /* For example, you can adjust font sizes, paddings, margins, etc. to fit smaller screens better */
+  body {
+    font-size: 14px;
+    
   }
-} */
+  .container {
+    padding: 10px;
+  }
+  /* ... and so on */
+}
 
 
 .card {
   padding: 2em;
 }
-
+/* 
 .read-the-docs {
   color: #888;
-}
+} */
 
 #img {
   text-align: center;
@@ -61,14 +77,12 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+  height: 200vh; 
+  background-color: #f5f5f5; 
 }
 
 .cycle-container {
   justify-content: space-between;
-  width: 600px;
-  height: 400px;
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 10px;

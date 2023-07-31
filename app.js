@@ -8,6 +8,8 @@ var menstrualRouter = require('./routes/menstrual');
 var follicularRouter = require('./routes/follicular');
 var ovulationRouter = require('./routes/ovulation');
 var lutealRouter = require('./routes/luteal');
+var usersRouter = require('./routes/users'); 
+
 
 var app = express();
 
@@ -22,5 +24,6 @@ app.use('/api/menstrual', menstrualRouter);
 app.use('/api/follicular', follicularRouter);
 app.use('/api/ovulation', ovulationRouter);
 app.use('/api/luteal', lutealRouter);
+app.use('/api/users', usersRouter); 
 
 module.exports = app;

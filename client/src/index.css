@@ -1,4 +1,4 @@
-:root {
+ :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -21,12 +21,6 @@ a {
 }
 
 
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #DDA0DD;
-}
 
 button {
   border-radius: 8px;
@@ -64,5 +58,5 @@ button:focus-visible {
 .card-text {
   font-family:Salsa, cursive;
   font-size: 15px;
-}
+} 
 

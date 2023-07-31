@@ -6,7 +6,7 @@ This uses React.js and Express (Node.js). The implementation includes async/awai
 
 ### 🟡 Version 1
 
-- **🌱 Next version:** Users would have a section of their favourite videos.
+- **🌱 Next version:** Users would have a section for their favourite videos.
   
 ### 📦 Dependencies
 

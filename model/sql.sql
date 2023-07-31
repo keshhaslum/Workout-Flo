@@ -2,6 +2,7 @@ DROP TABLE if exists menstrual;
 DROP TABLE if exists follicular;
 DROP TABLE if exists ovulation;
 DROP TABLE if exists luteal;
+DROP TABLE if exists users;
 
 CREATE TABLE `menstrual`(
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -59,3 +60,12 @@ INSERT INTO luteal (workout, video, embedid) VALUES
 ('Light Cardio', 'https://www.youtube.com/watch?v=QbmPxLWmWr8', 'QbmPxLWmWr8'),
 ('Stretch Routine', 'https://www.youtube.com/watch?v=baqAriam3l8', 'baqAriam3l8');
 
+CREATE TABLE `users` (
+  `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(255) NOT NULL UNIQUE,
+  `isAdmin` TINYINT(1) NOT NULL,
+  `password` VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users(username, isAdmin, password) VALUES ("adminuser", true, "123");
+INSERT INTO users(username, isAdmin, password) VALUES ("regularuser", false, "123");
