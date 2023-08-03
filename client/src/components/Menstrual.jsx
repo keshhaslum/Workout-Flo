@@ -77,14 +77,14 @@ export default function Menstrual() {
     
     return (
       <div>
-        <div className="container pt-4">
+        <div className="component-container">
           <h1 className="text-bold">Menstrual Phase</h1>
           <br />
           <div className="container py-2">
               <div className="row">
                 {workouts.map((workout) => (
                   <div key={workout.id} className="col-md-4">
-                    <div className="card mb-3">
+                    <div className="card mb-2">
                       <div className="card-body">
                         <h5 className="card-title t-center">{workout.workout}</h5>
                         <div className="d-flex justify-content-center">

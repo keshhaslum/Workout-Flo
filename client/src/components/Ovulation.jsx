@@ -72,7 +72,7 @@ export default function Ovulation() {
     
     return (
         <div>
-        <div className="container pt-4">
+        <div className="component-container">
           <h1 className="text-bold">Ovulation Phase</h1>
           <br />
           <div className="container py-2">

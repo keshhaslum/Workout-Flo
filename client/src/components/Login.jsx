@@ -55,45 +55,64 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div className="card text-center">
       {!isPasswordForgotten && (
-        <div>
-          <h1>Login</h1>
+        <div className="card-header">
+          <h4>Log in</h4>
+        </div>
+      )}
+      <div className="card-body">
+        {!isPasswordForgotten ? (
+          // Log in form
           <form onSubmit={login}>
-            <label>Username</label>
-            <input value={username} onChange={handleUsernameChange} />
-            <label>Password</label>
-            <input
-              value={password}
-              onChange={handlePasswordChange}
-              type="password"
-            />
+            <div>
+              <input
+                placeholder="Username"
+                value={username}
+                onChange={handleUsernameChange}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Password"
+                value={password}
+                onChange={handlePasswordChange}
+                type="password"
+              />
+            </div>
             <button type="submit">Login</button>
           </form>
+        ) : (
+          // Password reset form
+          <form onSubmit={resetPassword}>
+            <div>
+              <input
+                placeholder="Username"
+                value={username}
+                onChange={handleUsernameChange}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Type New Password"
+                value={newPassword}
+                onChange={handleNewPasswordChange}
+                type="password"
+              />
+            </div>
+            <button type="submit">Reset Password</button>
+          </form>
+        )}
+        {!isPasswordForgotten && (
           <button onClick={() => setIsPasswordForgotten(true)}>
             Forgot your password?
           </button>
-        </div>
-      )}
-      {isPasswordForgotten && (
-        <div>
-          <form onSubmit={resetPassword}>
-            <label>Username</label>
-            <input value={username} onChange={handleUsernameChange} />
-            <label>Type New Password</label>
-            <input
-              value={newPassword}
-              onChange={handleNewPasswordChange}
-              type="password"
-            />
-            <button type="submit">Reset Password</button>
-          </form>
-        </div>
-      )}
-
-      <form onSubmit={logout}>
-        <button type="submit">Logout</button>
-      </form>
-    </>
+        )}
+      </div>
+      {/* <form onSubmit={logout}> {/* Logout form is always rendered */}
+        {/* <button type="submit">Logout</button>
+      </form> */}
+    </div> 
   );
-}
+  
+        }

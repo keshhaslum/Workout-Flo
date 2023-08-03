@@ -147,7 +147,7 @@ function AuthProvider({ children }) {
     logout,
   };
 
-  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{...auth, navigate}}>{children}</AuthContext.Provider>;
 }
 
 function useAuth() {

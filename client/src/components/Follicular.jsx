@@ -72,7 +72,7 @@ export default function Follicular() {
     
     return (
         <div>
-        <div className="container pt-4">
+        <div className="component-container">
           <h1 className="text-bold">Follicular Phase</h1>
           <br />
           <div className="container py-2">

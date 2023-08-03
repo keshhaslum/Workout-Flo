@@ -23,25 +23,36 @@ export default function SignUp() {
   };
 
   return (
-    <>
-      <h1>Sign-up!</h1>
+    <div className="card text-center">
+        <div className="card-header">
+      <h4>Sign up</h4>
+      </div>
+      <div className="card-body">
       <form onSubmit={signup}>
-        <label>Username</label>
-        <input value={username} onChange={handleUsernameChange} />
-        <label>Password</label>
-        <input
-          value={password}
-          onChange={handlePasswordChange}
-          type="password"
-        />
+        <div>
+          <input
+            placeholder="Username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
+            type="password"
+          />
+        </div>
         <button type="submit">Sign Up</button>
         {auth.signupResponse && auth.signupResponse.status === 400 && (
           <p>
-            That the username is already taken. Please try a different
-            one!
+            The username is already taken. Please try a different one!
           </p>
         )}
       </form>
-    </>
+      </div>
+    </div>
   );
+  
 }

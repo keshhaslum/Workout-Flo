@@ -13,7 +13,7 @@ return (
     
     <div className="cycle-container">
     <div className="phase menstrual-phase"><Link to='/menstrual' ><div className="heading">Menstrual Phase</div>
-    <div>Days 1-7. This is when you would have your period. Energy levels might be low so light exercise is advised.</div></Link></div>
+    <div>Days 1-7. This is when you would have your period. Energy levels might be lower so moderate exercise is advised.</div></Link></div>
 
     <div className="phase follicular-phase"><Link to='/follicular' ><div className="heading">Follicular Phase</div>
     <div> Days 7-13. Your energy levels are starting to increase. Strength training and high-intensity exercise could be good here.</div></Link></div>
